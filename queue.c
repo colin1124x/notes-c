@@ -6,12 +6,12 @@ typedef struct queue QUEUE;
 struct items {
     int data;
     ITEM *link;
-}
+};
 
 struct queue {
     int size;
     ITEM *front, *rear;
-}
+};
 
 void initQueue(QUEUE *q) {
     q->size = 0;
@@ -49,17 +49,4 @@ int deleteQueue(QUEUE *q) {
     q->size--;
     free(x);
     return rel;
-}
-
-void main() {
-    QUEUE *q;
-    int i;
-    initQueue(q);
-    for (i = 1; i < 10; i++) {
-        addQueue(q, i);
-    }
-
-    while ( ! queueIsEmpty(q)) {
-        printf("%d\n", deleteQueue(q));
-    }
 }
